@@ -47,6 +47,11 @@
 					</select>
 				</div>
 			</div>
+			<div class="form-control">
+				<div class="input">
+					<input type="submit" name="register" value="Reigster">
+				</div>
+			</div>
 		</form>
 	</div>
 	<script src="js/common.js"></script>
