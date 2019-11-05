@@ -20,8 +20,8 @@
 	$errGender = '';
 	$errBirthday = '';
 	$errCity = '';
-	$fullName = '';
 	// khoi tao cac gia tri ban dau
+	$fullName = '';
 	$email = '';
 	$gender = '';
 	$birthday = '';
@@ -133,7 +133,7 @@
 			</div>
 			<div class="form-control">
 				<div class="input">
-					<input type="submit" name="register" value="Reigster">
+					<input type="submit" name="register" value="Register">
 				</div>
 			</div>
 		</form>
