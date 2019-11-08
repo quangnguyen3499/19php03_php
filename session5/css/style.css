@@ -1,0 +1,33 @@
+h1 {
+    text-align: center;
+}
+
+.register-form {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid black;
+    height: 400px;
+}
+
+.form-control {
+    margin: 20px;
+    height: 30px;
+}
+
+.form-control .label {
+    float: left;
+    width: 20%;
+}
+
+.form-control .input {
+    float: left;
+    width: 70%;
+}
+
+.error {
+    color: red;
+}
+
+img {
+    width: 150px;
+}
