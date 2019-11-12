@@ -22,14 +22,6 @@
 	$checkValidate = true;
     $avatarName = '';
 
-	if (isset($_POST['register'])) {
-        $id = $_POST['id'];
-		$fullname = $_POST['fullname'];
-		$price = $_POST['price'];
-		// Xu ly upload avatar
-		$avatar = $_FILES['avatar'];
-		// khoi tao anh mac dinh
-
 		if ($avatar['error'] == 0) {
 			// Gan ten cho avatar upload len
 			$avatarName = $avatar['name'];
@@ -51,7 +43,15 @@
 			$errFullName = 'Please input full name';
 		}
 
+	if (isset($_POST['register'])) {
+        $id = $_POST['id'];
+		$fullname = $_POST['fullname'];
+		$price = $_POST['price'];
+		// Xu ly upload avatar
+		$avatar = $_FILES['avatar'];
+		// khoi tao anh mac dinh
 		//In thong tin dang ky ra
+	}
 		if ($checkValidate) {
             echo "<h2>Thong tin nguoi dung</h2>";
             echo "Id: $id <br>";
@@ -59,7 +59,7 @@
 			echo "Price: $price <br>";
 			echo "<img src='img/$avatarName'>";
 		}
-	}
+	
     // ket thuc ket submit form
     //day du lieu len database
     $server = "127.0.0.1";
