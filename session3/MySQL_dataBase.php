@@ -3,14 +3,21 @@ $serverName = "localhost";
 $userName = "username";
 $password = "password";
     //create connection to server
-    $conn = new mysqli($serverName, $userName, $password);
+    $conn = mysqli_connect($serverName, $userName, $password);
     // Check connection
-    if ($conn) 
-        echo "Connected successfully!";
-else
-        die("Connection failed:( " .mysqli_error($conn));
-    
-// Check connection
+if (mysqli_connect_errno())
+{
+echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+
+// Perform a query, check for error
+if (!mysqli_query($conn,"INSERT INTO Persons (FirstName) VALUES ('Glenn')"))
+{
+echo("Error description: " . mysqli_error($conn));
+}
+
+mysqli_close($conn);
+?>
 
     // Create database
    // $sql = "CREATE DATABASE myDB";
@@ -23,7 +30,7 @@ else
     /*$sql = "CREATE TABLE Product_Information (
         Id int(6) PRIMARY KEY,
         Name_of_product varchar(30) NOT NULL,
-        Describe varchar(30) NOT NULL,
+        Description varchar(30) NOT NULL,
         Price money NOT NULL,
         Date_of_manufacture date NOT NULL,
         Expiration_date date NOT NULL,
@@ -36,5 +43,6 @@ else
         } else {
             echo "Error creating table: " . $conn->error;
         } */  
-$conn->close();
+mysqli_close($conn);
 ?>
+*/

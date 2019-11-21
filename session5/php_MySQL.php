@@ -22,26 +22,26 @@
 	$checkValidate = true;
     $avatarName = '';
 
-		if ($avatar['error'] == 0) {
-			// Gan ten cho avatar upload len
-			$avatarName = $avatar['name'];
-			// Upload file vao thu muc
-			move_uploaded_file($avatar['tmp_name'], 'img/'.$avatarName);
-		}
-		// Ket thu xu ly upload avatar
-        // validate loi de trong (validate co ban)
-        if ($id == '') {
-			$checkValidate = false;
-			$errId = 'Please input id';
-		}
-		if ($price == '') {
-			$checkValidate = false;
-			$errPrice = 'Please fill price';
-		}
-		if ($fullname == '') {
-			$checkValidate = false;
-			$errFullName = 'Please input full name';
-		}
+	if ($avatar['error'] == 0) {
+		// Gan ten cho avatar upload len
+		$avatarName = $avatar['name'];
+		// Upload file vao thu muc
+		move_uploaded_file($avatar['tmp_name'], 'img/'.$avatarName);
+	}
+	// Ket thu xu ly upload avatar
+    // validate loi de trong (validate co ban)
+    if ($id == '') {
+		$checkValidate = false;
+		$errId = 'Please input id';
+	}
+	if ($price == '') {
+		$checkValidate = false;
+		$errPrice = 'Please fill price';
+	}
+	if ($fullname == '') {
+		$checkValidate = false;
+		$errFullName = 'Please input full name';
+	}
 
 	if (isset($_POST['register'])) {
         $id = $_POST['id'];
@@ -52,13 +52,13 @@
 		// khoi tao anh mac dinh
 		//In thong tin dang ky ra
 	}
-		if ($checkValidate) {
-            echo "<h2>Thong tin nguoi dung</h2>";
-            echo "Id: $id <br>";
-			echo "Name of user: $fullname <br>";
-			echo "Price: $price <br>";
-			echo "<img src='img/$avatarName'>";
-		}
+	if ($checkValidate) {
+        echo "<h2>Thong tin nguoi dung</h2>";
+        echo "Id: $id <br>";
+		echo "Name of user: $fullname <br>";
+		echo "Price: $price <br>";
+		echo "<img src='img/$avatarName'>";
+	}
 	
     // ket thuc ket submit form
     //day du lieu len database
@@ -70,9 +70,9 @@
     $connect = mysqli_connect($server, $username, $password, $database);
     // Check connection
     if (mysqli_connect_errno())
-  {
+    {
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
+    } 
     if (isset($_POST['register'])) {
         // cau lenh chen user vao db
        $sql = "INSERT INTO products(Id, Name, Price, Image) VALUES ('$id', '$fullname', '$price', 'img/$avatarName')";

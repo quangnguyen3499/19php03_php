@@ -10,7 +10,7 @@
 </head>
 <body>
 	<?php 
-	// code php o day
+
 	//Tao mang key value cho danh muc san pham
 	$arrType = array('cosmetics' => 'Cosmetics', 'food' => 'Food', 'medicine' => 'Medicine');
 	// Khoi tao cac bien loi
@@ -158,6 +158,5 @@
 			</div>
 		</form>
 	</div>
-	<script src="js/common.js"></script>
 </body>
 </html>
