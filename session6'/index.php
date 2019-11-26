@@ -25,9 +25,6 @@
 	<h1>Register form</h1>
 	<form action="#" method="POST" enctype="multipart/form-data">
 		<p>
-			<input type="text" name="id" placeholder="id">
-		</p>
-		<p>
 			<input type="text" name="title" placeholder="title">
 		</p>
 		<p>
