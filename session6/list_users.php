@@ -36,6 +36,7 @@
 			<th>Password</th>
 			<th>Avatar</th>
 			<th>Action</th>
+			<th>Date Post</th>
 		</tr>
 	
 	<?php 
@@ -48,6 +49,7 @@
 			echo "<td>".$row['password']."</td>";
 			echo "<td><img src='uploads/".$row['avatar']."'></td>";
 			echo "<td><a href='delete.php?id=".$id."''>Delete</a> | <a href='edit.php?id=".$id."''>Edit</a></td>";
+			echo "<td>".$row['datepost']."</td>";
 			echo "</tr>";
 		}
 	?>
