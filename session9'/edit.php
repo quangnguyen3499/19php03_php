@@ -26,14 +26,14 @@
 			$sqlEditData = "UPDATE sinhvien SET name = '$name' WHERE id = $idEdit";
 			if (mysqli_query($connect, $sqlEditData) === TRUE) {
 				// chuyen trang
-				header('Location: list_product.php');
+				header('Location: list_sinhvien.php');
 			}
 		}
 	?>
 	<h1>Edit form</h1>
 	<form action="#" method="POST" enctype="multipart/form-data">
 		<p>
-			<input type="text" name="name" placeholder="name" value="<?php echo $edit['name']?>">
+			<input type="text" name="name" placeholder="Name..." value="<?php echo $edit['name']?>">
 			<span class="error"> <?php echo $errName;?> </span>
 		</p>
 		<p>

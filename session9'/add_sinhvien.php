@@ -17,7 +17,7 @@
 			// luu vao bang products
 			$sqlSave = "INSERT INTO sinhvien(name, gender, school) VALUES('$name', '$gender', '$school')";
 			if (mysqli_query($connect, $sqlSave) === TRUE) {
-				header('Location: list_product.php');
+				header('Location: list_sinhvien.php');
 			}
 		}
 	?>

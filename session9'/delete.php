@@ -4,6 +4,6 @@
 	$sqlDelete = "DELETE FROM sinhvien WHERE id = $id";
 	if (mysqli_query($connect, $sqlDelete) === TRUE) {
 		// chuyen trang
-		header('Location: list_product.php');
+		header('Location: list_sinhvien.php');
 	}
 ?>
