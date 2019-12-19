@@ -19,7 +19,7 @@
 		$keyword = $_POST['keyword'];
 		// search keyword
 		if ($keyword != '') {
-			$sinhvien_category_id = $_POST['school_id'];
+			$sinhvien_category_id = $_POST['sinhvien_category_id'];
 			$sqlSelect = "SELECT sinhvien.id, sinhvien.name, sinhvien.gender, sinhvien.schoolID FROM sinhvien
 			WHERE (sinhvien.name LIKE '%$keyword%') OR (sinhvien.gender LIKE '%$keyword%') OR (sinhvien.schoolID LIKE '%$keyword%')";
 		}
@@ -34,7 +34,7 @@
 		</p>
 		<p>
 			Name
-			<select name="school_id">
+			<select name="sinhvien_school_id">
 				<?php 
 						while ($row = $categories->fetch_assoc()) {
 							echo "<option value='".$row['id']."'>".$row['name']."</option>";
@@ -61,7 +61,7 @@
 				echo "<td>".$row['id']."</td>";
 				echo "<td>".$row['name']."</td>";
 				echo "<td>".$row['gender']."</td>";
-				echo "<td>".$row['school']."</td>";
+				echo "<td>".$row['schoolID']."</td>";
 				echo "<td><a href='delete.php?id=".$id."''>Delete</a> | <a href='edit.php?id=".$id."''>Edit</a></td>";
 				echo "</tr>";
 			}
