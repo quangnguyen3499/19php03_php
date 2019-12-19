@@ -12,8 +12,7 @@
 		$sqlCate = "SELECT * FROM sinhvien";
 		$categories = mysqli_query($connect, $sqlCate);
 		// end get category
-		$sqlSelect = "SELECT sinhvien.id, sinhvien.name, sinhvien.gender, sinhvien.school FROM sinhvien
-		INNER JOIN sinhvien_categories ON sinhvien.sinhvien_category_id = sinhvien_categories.id";
+		$sqlSelect = "SELECT sinhvien.id, sinhvien.name, sinhvien.gender, sinhvien.school FROM sinhvien";
 		// Thuc hien chuc nang tim kiem
 		$keyword = '';
 		if (isset($_POST['search'])) {
@@ -22,7 +21,6 @@
 		if ($keyword != '') {
 			$sinhvien_category_id = $_POST['sinhvien_category_id'];
 			$sqlSelect = "SELECT sinhvien.id, sinhvien.name, sinhvien.gender, sinhvien.school FROM sinhvien
-			INNER JOIN sinhvien_categories ON sinhvien.sinhvien_category_id = sinhvien_categories.id
 			WHERE (sinhvien.name LIKE '%$keyword%') OR (sinhvien.gender LIKE '%$keyword%') OR (sinhvien.school LIKE '%$keyword%')";
 		}
 		}
