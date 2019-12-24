@@ -1,0 +1,3 @@
+public: dung all;
+protected: lop con dung duoc sau khi ke thua;
+private: dung duoc trong lop khai bao va ham friend; 
