@@ -1,10 +1,13 @@
 <?php 
+	/**
+	 * 
+	 */
 	include 'model/model.php';
 	class Controller
 	{
+		// function xulyyeucau();
 		function handleRequest() {
 			$action = isset($_GET['action'])?$_GET['action']:'home';
-			$model = new Model;
 			switch ($action) {
 				case 'home':
 					include 'views/home.php';
@@ -14,6 +17,7 @@
 					$model = new Model();
 					$myNews = $model->getNewsFromDatabase();
 					//var_dump($myNews); // giống console.log bên js
+
 					include 'views/news.php';
 					break;
 				case 'products':
@@ -25,7 +29,6 @@
 					if (isset($_POST['login'])) {
 						$username = $_POST['username'];
 						$password = $_POST['password'];
-						$avatar = $_POST['avatar'];
 						if ($username == '') {
 							$errUser = 'Vui lòng điền username';
 						}
@@ -40,8 +43,7 @@
 							if ($checkLogin->num_rows) {
 								// vào được đây tức là username và password đúng
 								$_SESSION['username'] = $check['username'];
-								$_SESSION['avatar'] = $check['avatar'];
-							 	header('Location: index.php');
+								header('Location: index.php');
 							}
 						}
 					}
@@ -54,7 +56,7 @@
 				default:
 					# code...
 					break;
-				}
 			}
 		}
+	}
 ?>
